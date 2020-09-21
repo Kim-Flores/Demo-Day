@@ -10,7 +10,7 @@ module.exports = function(app, passport, db, ObjectId) {
   
       // PROFILE SECTION =========================
       app.get('/profile', isLoggedIn, function(req, res) {
-          db.collection('messages').find().toArray((err, result) => {
+          db.collection('data').find().toArray((err, result) => {
             if (err) return console.log(err)
             res.render('profile.ejs', {
               user : req.user,
@@ -25,12 +25,12 @@ module.exports = function(app, passport, db, ObjectId) {
           res.redirect('/');
       });
 
-// COMMUNITY PAGE ===============================================================
+// FEED PAGE ===============================================================
 
-      app.get('/community', isLoggedIn, function(req, res) {
-        db.collection('messages').find().toArray((err, result) => {
+      app.get('/feed', isLoggedIn, function(req, res) {
+        db.collection('data').find().toArray((err, result) => {
           if (err) return console.log(err)
-          res.render('community.ejs', {
+          res.render('feed.ejs', {
             user : req.user,
             messages: result
           })
@@ -40,7 +40,7 @@ module.exports = function(app, passport, db, ObjectId) {
   // Write new entry ===============================================================
 
   app.get('/write', isLoggedIn, function(req, res) {
-    db.collection('messages').find().toArray((err, result) => {
+    db.collection('data').find().toArray((err, result) => {
       if (err) return console.log(err)
       res.render('write.ejs', {
         user : req.user,
@@ -51,7 +51,7 @@ module.exports = function(app, passport, db, ObjectId) {
   // message board routes ===============================================================
   
       app.post('/messages', (req, res) => {
-        db.collection('messages').save({name: req.body.name, title: req.body.title, msg: req.body.msg, date: req.body.date, src: req.body.src, heart: 0, fav: "#000"}, (err, result) => {
+        db.collection('data').save({name: req.body.name, title: req.body.title, msg: req.body.msg, date: req.body.date, src: req.body.src, heart: 0, fav: "#000"}, (err, result) => {
           if (err) return console.log(err)
           console.log('saved to database')
           res.redirect('/profile')
@@ -60,7 +60,7 @@ module.exports = function(app, passport, db, ObjectId) {
   
       app.put('/messages', (req, res) => {
         console.log(req.body)
-        db.collection('messages')
+        db.collection('data')
         .findOneAndUpdate({_id: ObjectId(req.body.id)}, {
           $set: {
             heart: req.body.heart,
@@ -76,7 +76,7 @@ module.exports = function(app, passport, db, ObjectId) {
       })
 
       app.delete('/messages', (req, res) => {
-        db.collection('messages').findOneAndDelete({_id: ObjectId(req.body.id)}, (err, result) => {
+        db.collection('data').findOneAndDelete({_id: ObjectId(req.body.id)}, (err, result) => {
           if (err) return res.send(500, err)
           res.send('Message deleted!')
         })

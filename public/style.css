@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 body{
   padding-top:80px;
   word-wrap:break-word;
-  background: url(img/bg3.png);
+  background: #FFF url(img/bg1.png) no-repeat top right;
 }
 
 img{
@@ -20,26 +20,26 @@ p{
 /* =========INDEX========= */
 .jumbotron{
   background-color: #ffffffe8;
-  border: 10px double #7dd9ef;
+  border: 10px solid #8BC34A;
 }
 
 .btnLogin{
-  background-color: #d1d15d;
+  background-color: #CDDC39;
   margin-right: 10px;
   font-weight: bold;
 }
 
 .btnSign{
-  background-color: #eb702b;
+  background-color:#CDDC39;
   font-weight: bold;
 }
 /* =========LOGIN========= */
 .form-control{
-  border: 3px solid #eb702b;
+  border: 3px solid #CDDC39;
 }
 
 a{
-  color: #03A9F4;
+  color:#8BC34A;
 }
 
 .loginTitle, .signTitle{
@@ -47,6 +47,16 @@ a{
   width: 50%;
   border-radius: 10px;
   padding: 9px;
+}
+
+.form-control {
+  border: 3px solid #729155;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #8BC34A;
+  border-color: #4CAF50;
 }
 /* =========SIGNUP========= */
 
@@ -67,8 +77,9 @@ header{
   font-size: 50px;
 }
 .loginBtn{
-  background: #76d0e7ad;
-  border: 2px solid #50a6bb;
+  background: #6fbc72;
+  border: 2px solid #009688;
+  color: #FFF;
 }
 
 .hdrBtn{
@@ -93,8 +104,8 @@ header{
 }
 
 .well{
-  background: #b5e2ede3;
-  border: 5px solid #5bb9f0ad;
+  background: #cddc3999;
+  border: 5px solid #8BC34A;
   border-radius: 10px;
 }
 .entryTitle{
@@ -105,7 +116,7 @@ header{
   background: #ffffffcc;
   padding: 10px;
   color: #443b67;
-  border: 4px dashed #7dd9ef;
+  border: 4px dashed#009688;
   border-radius: 7px;
   margin-bottom: 25px;
 }
@@ -113,7 +124,7 @@ header{
 /* =========WRITE========= */
 
 .writeMsg{
-  border: 6px solid #8bddf1;
+  border: 6px solid #4CAF50;
   border-radius: 8px;
   background: #fcfcfcba;
   text-align: center;
@@ -132,26 +143,26 @@ header{
 }
 
 .btn2{
-  background: #92dff1;
+  background:#FFC107;
 }
 
 .btn3{
-  background: #f79cbd;
+  background: #fcda6e;
 }
 
 .btn4{
-  background: #eb702b;
+  background:#FFC107;
 }
 input{
   display: block;
   margin-bottom: 22px;
-  border: 2px solid #f05b84;
+  border: 2px solid #8BC34A;
   border-radius: 5px;
 }
 
 textarea{
   margin-bottom: 22px;
-  border: 2px solid #f05b84;
+  border: 2px solid#8BC34A;
   border-radius: 5px;
 }
 
